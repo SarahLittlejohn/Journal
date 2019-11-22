@@ -26,6 +26,7 @@ public class ResourceService {
         Resource resource = new Resource();
         resource.setName(resourceDao.getName());
         resource.setUrl(resourceDao.getUrl());
+        resource.setDescription(resourceDao.getDescription());
         resourceRepository.save(resource);
     }
 
@@ -42,6 +43,7 @@ public class ResourceService {
         if (resource.isPresent()) {
             resource.get().setName(resourceDao.getName());
             resource.get().setUrl(resourceDao.getUrl());
+            resource.get().setDescription(resourceDao.getDescription());
             resourceRepository.save(resource.get());
         }
     }

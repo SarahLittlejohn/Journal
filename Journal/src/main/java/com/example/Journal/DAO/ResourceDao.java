@@ -3,6 +3,7 @@ package com.example.Journal.DAO;
 public class ResourceDao {
     private String name;
     private String url;
+    private String description;
 
     public String getName() {
         return name;
@@ -18,5 +19,13 @@ public class ResourceDao {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
