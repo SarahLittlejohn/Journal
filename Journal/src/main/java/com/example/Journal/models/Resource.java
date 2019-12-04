@@ -17,6 +17,9 @@ public class Resource {
     @Column(name = "url")
     private String url;
 
+    @Column(name = "description")
+    private String description;
+
     public String getName() {
         return name;
     }
@@ -39,5 +42,13 @@ public class Resource {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

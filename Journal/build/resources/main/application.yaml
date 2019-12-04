@@ -14,7 +14,7 @@ spring:
         temp:
           use_jdbc_metadata_defaults: false
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/sarah}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/journal}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
     password: ${SPRING_DATASOURCE_PASSWORD:password}
     platform: postgresql

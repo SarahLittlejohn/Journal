@@ -6,7 +6,6 @@ import com.example.Journal.models.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -17,6 +16,7 @@ public class ResourceController {
     @Autowired
     private ResourceService resourceService;
 
+    @CrossOrigin(origins = "*")
     @GetMapping(value = "")
     public List<Resource> getResources() {
          return resourceService.getAllResources();
