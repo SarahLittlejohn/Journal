@@ -22,11 +22,13 @@ public class ResourceController {
          return resourceService.getAllResources();
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping(value = "")
     public void createResource(@RequestBody ResourceDao resource) {
         resourceService.createResource(resource);
     }
 
+    @CrossOrigin(origins = "*")
     @DeleteMapping(value = "/{resourceId}")
     public void deleteResource(@PathVariable Integer resourceId) {
         resourceService.deleteResource(resourceId);
@@ -37,6 +39,7 @@ public class ResourceController {
         return resourceService.getResourceById(resourceId);
     }
 
+    @CrossOrigin(origins = "*")
     @PutMapping("/{resourceId}")
     public void updateResource(@PathVariable(value="resourceId") Integer resourceId, @RequestBody ResourceDao resource) {
         resourceService.updateResource(resourceId, resource);
