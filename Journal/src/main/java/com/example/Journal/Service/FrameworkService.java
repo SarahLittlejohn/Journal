@@ -22,12 +22,13 @@ public class FrameworkService {
         return frameworkRepository.findAll();
     }
 
-    public void createFramework(FrameworkDao frameworkDao) {
+    public FrameworkDao createFramework(FrameworkDao frameworkDao) {
         Framework framework = new Framework();
         framework.setName(frameworkDao.getName());
         framework.setUrl(frameworkDao.getUrl());
         framework.setDescription(frameworkDao.getDescription());
         frameworkRepository.save(framework);
+        return frameworkDao;
     }
 
     public void deleteFramework(Integer frameworkId){
@@ -38,7 +39,7 @@ public class FrameworkService {
         return frameworkRepository.findById(frameworkId);
     }
 
-    public void updateFramework(Integer frameworkId, FrameworkDao frameworkDao) {
+    public FrameworkDao updateFramework(Integer frameworkId, FrameworkDao frameworkDao) {
         Optional<Framework> framework = frameworkRepository.findById(frameworkId);
         if (framework.isPresent()) {
             framework.get().setName(frameworkDao.getName());
@@ -46,6 +47,7 @@ public class FrameworkService {
             framework.get().setDescription(frameworkDao.getDescription());
             frameworkRepository.save(framework.get());
         }
+        return frameworkDao;
     }
 
 }

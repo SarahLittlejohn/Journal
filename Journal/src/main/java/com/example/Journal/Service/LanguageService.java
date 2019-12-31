@@ -24,12 +24,13 @@ public class LanguageService {
         return languageRepository.findAll();
     }
 
-    public void createLanguage(LanguageDao languageDao) {
+    public LanguageDao createLanguage(LanguageDao languageDao) {
         Language language = new Language();
         language.setName(languageDao.getName());
         language.setUrl(languageDao.getUrl());
         language.setDescription(languageDao.getDescription());
         languageRepository.save(language);
+        return languageDao;
     }
 
     public void deleteLanguage(Integer languageId){
@@ -40,7 +41,7 @@ public class LanguageService {
         return languageRepository.findById(languageId);
     }
 
-    public void updateLanguage(Integer languageId, LanguageDao languageDao) {
+    public LanguageDao updateLanguage(Integer languageId, LanguageDao languageDao) {
         Optional<Language> language = languageRepository.findById(languageId);
         if (language.isPresent()) {
             language.get().setName(languageDao.getName());
@@ -48,6 +49,7 @@ public class LanguageService {
             language.get().setDescription(languageDao.getDescription());
             languageRepository.save(language.get());
         }
+        return languageDao;
     }
 
 }

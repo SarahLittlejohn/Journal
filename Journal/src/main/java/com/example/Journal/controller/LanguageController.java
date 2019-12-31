@@ -1,9 +1,12 @@
 package com.example.Journal.controller;
 
 import com.example.Journal.DAO.LanguageDao;
+import com.example.Journal.DAO.ResourceDao;
 import com.example.Journal.Service.LanguageService;
 import com.example.Journal.models.Language;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
@@ -23,8 +26,10 @@ public class LanguageController {
 
     @CrossOrigin(origins = "*")
     @PostMapping(value = "")
-    public void createLanguage(@RequestBody LanguageDao language) {
+    public ResponseEntity<LanguageDao> createLanguage(@RequestBody LanguageDao language) {
         languageService.createLanguage(language);
+        LanguageDao languageDao = new LanguageDao();
+        return new ResponseEntity<>(languageDao, HttpStatus.CREATED);
     }
 
     @CrossOrigin(origins = "*")

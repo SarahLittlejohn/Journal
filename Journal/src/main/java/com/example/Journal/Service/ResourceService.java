@@ -22,12 +22,13 @@ public class ResourceService {
         return resourceRepository.findAll();
     }
 
-    public void createResource(ResourceDao resourceDao) {
+    public ResourceDao createResource(ResourceDao resourceDao) {
         Resource resource = new Resource();
         resource.setName(resourceDao.getName());
         resource.setUrl(resourceDao.getUrl());
         resource.setDescription(resourceDao.getDescription());
         resourceRepository.save(resource);
+        return resourceDao;
     }
 
     public void deleteResource(Integer resourceId){
@@ -38,7 +39,7 @@ public class ResourceService {
         return resourceRepository.findById(resourceId);
     }
 
-    public void updateResource(Integer resourceId, ResourceDao resourceDao) {
+    public ResourceDao updateResource(Integer resourceId, ResourceDao resourceDao) {
         Optional<Resource> resource = resourceRepository.findById(resourceId);
         if (resource.isPresent()) {
             resource.get().setName(resourceDao.getName());
@@ -46,6 +47,7 @@ public class ResourceService {
             resource.get().setDescription(resourceDao.getDescription());
             resourceRepository.save(resource.get());
         }
+        return resourceDao;
     }
 
 }
