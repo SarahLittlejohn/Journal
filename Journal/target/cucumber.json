@@ -1,0 +1,58 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "Get the list of resources",
+        "description": "",
+        "id": "view-\u0026-create-resources;get-the-list-of-resources",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 97607102,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "a get request is made to \u0027 \"/resources\" \u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/resources",
+                  "offset": 28
+                }
+              ],
+              "location": "ResourceSteps.aGetRequestIsMadeToEndpoint(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2961479,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "a response code of 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 19
+                }
+              ],
+              "location": "ResourceSteps.aResponseCodeOf(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "View \u0026 create resources",
+    "description": "",
+    "id": "view-\u0026-create-resources",
+    "keyword": "Feature",
+    "uri": "resources.feature"
+  }
+]

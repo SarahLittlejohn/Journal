@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="0.100569">
+<testcase classname="View &amp; create resources" name="Get the list of resources" time="0.100569">
+<system-out><![CDATA[When a get request is made to ' "/resources" '..............................passed
+Then a response code of 200.................................................passed
+]]></system-out>
+</testcase>
+</testsuite>

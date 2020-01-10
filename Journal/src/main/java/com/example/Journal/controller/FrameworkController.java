@@ -4,6 +4,7 @@ import com.example.Journal.DAO.FrameworkDao;
 import com.example.Journal.Service.FrameworkService;
 import com.example.Journal.models.Framework;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -24,8 +25,10 @@ public class FrameworkController {
 
     @CrossOrigin(origins = "*")
     @PostMapping(value = "")
-    public void createFramework(@RequestBody FrameworkDao framework) {
+    public ResponseEntity<FrameworkDao> createFramework(@RequestBody FrameworkDao framework) {
         frameworkService.createFramework(framework);
+        FrameworkDao frameworkDao = new FrameworkDao();
+        return new ResponseEntity<>(frameworkDao, HttpStatus.CREATED);
     }
 
     @CrossOrigin(origins = "*")
