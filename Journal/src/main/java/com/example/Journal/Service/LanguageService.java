@@ -2,7 +2,6 @@ package com.example.Journal.Service;
 import com.example.Journal.DAO.LanguageDao;
 import com.example.Journal.models.Language;
 import com.example.Journal.repository.LanguageRepository;
-import com.example.Journal.repository.LanguageRepositoryString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +12,6 @@ import java.util.Optional;
 public class LanguageService {
 
     private LanguageRepository languageRepository;
-    private LanguageRepository languageRepositoryString;
 
     @Autowired
     public LanguageService(LanguageRepository languageRepository) {

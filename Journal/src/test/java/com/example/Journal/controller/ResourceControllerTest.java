@@ -112,15 +112,23 @@ public class ResourceControllerTest {
         ResourceDao testResource = new ResourceDao();
         testResource.setName("testResource");
         testResource.setUrl("http://testResource.com");
+        // Create test resource
 
         String testJson = JsonUtilities.asJsonString(testResource);
+        // Convert test resource into a Json string
         when(resourceService.createResource(testResource)).thenReturn(testResource);
+        // When the resource is created, return it
 
         mockMvc.perform(post("/resources")
+        // Post the resource
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(testJson))
+                // Decide on content type
+                .content(testJson);
+                // Choose the content
                 .andExpect(status().isCreated());
+                // Expect a 201 response
         verify(resourceService, times(1)).createResource(any(ResourceDao.class));
+        // Check that the createResource was called
         verifyNoMoreInteractions(resourceService);
     }
 
