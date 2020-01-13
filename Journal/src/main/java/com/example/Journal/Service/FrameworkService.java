@@ -1,8 +1,10 @@
 package com.example.Journal.Service;
 import com.example.Journal.DAO.FrameworkDao;
+import com.example.Journal.errors.MyException;
 import com.example.Journal.models.Framework;
 import com.example.Journal.repository.FrameworkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,13 +24,17 @@ public class FrameworkService {
         return frameworkRepository.findAll();
     }
 
-    public FrameworkDao createFramework(FrameworkDao frameworkDao) {
+    public FrameworkDao createFramework(FrameworkDao frameworkDao) throws MyException {
         Framework framework = new Framework();
         framework.setName(frameworkDao.getName());
         framework.setUrl(frameworkDao.getUrl());
         framework.setDescription(frameworkDao.getDescription());
         frameworkRepository.save(framework);
-        return frameworkDao;
+        if(framework != null){
+            return frameworkDao;
+        } else {
+            throw new MyException(HttpStatus.INTERNAL_SERVER_ERROR, "framework not created");
+        }
     }
 
     public void deleteFramework(Integer frameworkId){

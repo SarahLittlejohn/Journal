@@ -1,8 +1,10 @@
 package com.example.Journal.Service;
 import com.example.Journal.DAO.LanguageDao;
+import com.example.Journal.errors.MyException;
 import com.example.Journal.models.Language;
 import com.example.Journal.repository.LanguageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,13 +24,17 @@ public class LanguageService {
         return languageRepository.findAll();
     }
 
-    public LanguageDao createLanguage(LanguageDao languageDao) {
+    public LanguageDao createLanguage(LanguageDao languageDao) throws MyException {
         Language language = new Language();
         language.setName(languageDao.getName());
         language.setUrl(languageDao.getUrl());
         language.setDescription(languageDao.getDescription());
         languageRepository.save(language);
-        return languageDao;
+        if(language != null){
+            return languageDao;
+        } else {
+            throw new MyException(HttpStatus.INTERNAL_SERVER_ERROR, "language not created");
+        }
     }
 
     public void deleteLanguage(Integer languageId){

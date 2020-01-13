@@ -115,7 +115,7 @@ public class FrameworkControllerTest {
         verifyNoMoreInteractions(frameworkService);
     }
 
-    @Ignore
+    @Test
     public void PostFramework_500Response_ShouldReturnError() throws Exception {
         FrameworkDao testFramework = new FrameworkDao();
         testFramework.setName("testFramework");

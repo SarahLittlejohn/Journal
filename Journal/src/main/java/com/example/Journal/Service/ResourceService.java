@@ -1,8 +1,10 @@
 package com.example.Journal.Service;
 import com.example.Journal.DAO.ResourceDao;
+import com.example.Journal.errors.MyException;
 import com.example.Journal.models.Resource;
 import com.example.Journal.repository.ResourceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,13 +24,17 @@ public class ResourceService {
         return resourceRepository.findAll();
     }
 
-    public ResourceDao createResource(ResourceDao resourceDao) {
+    public ResourceDao createResource(ResourceDao resourceDao) throws MyException {
         Resource resource = new Resource();
         resource.setName(resourceDao.getName());
         resource.setUrl(resourceDao.getUrl());
         resource.setDescription(resourceDao.getDescription());
         resourceRepository.save(resource);
-        return resourceDao;
+        if(resource != null){
+            return resourceDao;
+        } else {
+            throw new MyException(HttpStatus.INTERNAL_SERVER_ERROR, "resource not created");
+        }
     }
 
     public void deleteResource(Integer resourceId){

@@ -115,7 +115,7 @@ public class LanguageControllerTest {
         verifyNoMoreInteractions(languageService);
     }
 
-    @Ignore
+    @Test
     public void PostLanguage_500Response_ShouldReturnError() throws Exception {
         LanguageDao testLanguage = new LanguageDao();
         testLanguage.setName("testLanguage");

@@ -7,9 +7,6 @@ import com.example.Journal.models.Resource;
 import com.example.Journal.errors.MyException;
 import com.example.Journal.errors.ExceptionHandlingController;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,22 +39,24 @@ import static org.hamcrest.Matchers.is;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
+// Look for a main configuration class i.e. @SpringBootApplication
 @AutoConfigureMockMvc
 public class ResourceControllerTest {
 
     @Mock
     private ResourceService resourceService;
+    // Creates a mock of the service
 
     @InjectMocks
     private ResourceController resourceController;
+    // Creates an instance of the class and injects the mocks described in @Mock
 
     @Autowired
     private MockMvc mockMvc;
-
-    final private String ENDPOINT = "/resources";
-    private static final ObjectMapper MAPPER = new ObjectMapper();
+    // MockMvc is injected before the test methods are run
 
     @Before
+    // Every @Before section is repeated before each test.
     public void setup() throws MyException {
         mockMvc = MockMvcBuilders.standaloneSetup(resourceController)
                 .setControllerAdvice(new ExceptionHandlingController())
@@ -71,36 +70,39 @@ public class ResourceControllerTest {
         Resource testResource = new Resource();
         testResource.setName("testResource");
         testResource.setUrl("http://testResource.com");
-        testResource.setResourceId((Integer) 1);
         // Create first new test resource
 
         Resource testResource2 = new Resource();
         testResource2.setName("testResource2");
         testResource2.setUrl("http://testResource2.com");
-        testResource2.setResourceId((Integer) 2);
         // Create second new test resource
 
         List<Resource> testResources = new ArrayList<>();
         testResources.add(testResource);
         testResources.add(testResource2);
-        // Add new test resources to ArrayList
+        // Create array containing two test resources
 
         when(resourceService.getAllResources()).thenReturn(testResources);
-        // When the .getAllResources() is called, expect the testResources to be returned
+        /* when() allows us to provide the actual mocking behaviour.
+        It tells Mockito that when the getAllResources is called from the resourceService,
+        the returned Resources should be stubbed. This means that the returned class is a
+        fake one with preprogrammed return values and not a real returned object from the
+        database. This allows us to test the unit without actually having to connect to the
+        database or Spring at all.
+         */
+
         mockMvc.perform(get("/resources"))
         // Performs a get request
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].resourceId", is((Integer) 1)))
                 .andExpect(jsonPath("$[0].name", is("testResource")))
                 .andExpect(jsonPath("$[0].url", is("http://testResource.com")))
-                .andExpect(jsonPath("$[1].resourceId", is((Integer) 2)))
                 .andExpect(jsonPath("$[1].name", is("testResource2")))
                 .andExpect(jsonPath("$[1].url", is("http://testResource2.com")));
                 // Checks that the size and content of the data is correct
 
         verify(resourceService, times(1)).getAllResources();
-        // Verify is used to check if a certain method of a mock object has been called a specific number of times.
+        // Verify is used to that the mocked/stubbed method is actually called.
 
         verifyNoMoreInteractions(resourceService);
         // This method is used after all the verify methods to make sure that all the interactions are verified.
@@ -123,7 +125,7 @@ public class ResourceControllerTest {
         // Post the resource
                 .contentType(MediaType.APPLICATION_JSON)
                 // Decide on content type
-                .content(testJson);
+                .content(testJson))
                 // Choose the content
                 .andExpect(status().isCreated());
                 // Expect a 201 response
@@ -132,14 +134,14 @@ public class ResourceControllerTest {
         verifyNoMoreInteractions(resourceService);
     }
 
-    @Ignore
+    @Test
     public void PostResource_500Response_ShouldReturnError() throws Exception {
         ResourceDao testResource = new ResourceDao();
         testResource.setName("testResource");
         testResource.setUrl("http://testResource.com");
 
         String testJson = JsonUtilities.asJsonString(testResource);
-        when(resourceService.createResource(any(ResourceDao.class))).thenThrow(new MyException(HttpStatus.INTERNAL_SERVER_ERROR, "no resource created"));
+        when(resourceService.createResource(any(ResourceDao.class))).thenThrow(new MyException(HttpStatus.INTERNAL_SERVER_ERROR, "resource not created"));
 
         mockMvc.perform(post("/resources")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -172,11 +174,12 @@ public class ResourceControllerTest {
         testResource.setName("testResource");
         testResource.setUrl("http://testResource.com");
 
-        when(resourceService.updateResource(any(Integer.class), any(ResourceDao.class))).thenThrow(new MyException(HttpStatus.NOT_FOUND, "resource 1 not found"));
+        when(resourceService.updateResource(any(Integer.class), any(ResourceDao.class))).thenThrow(new MyException(HttpStatus.NOT_FOUND, "resource not found"));
         mockMvc.perform(put("/resources/{id}", (Integer) 1)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(JsonUtilities.asJsonString(testResource)))
                 .andExpect(status().isNotFound());
         verify(resourceService, times(1)).updateResource(any(Integer.class), any(ResourceDao.class));
     }
+
 }
