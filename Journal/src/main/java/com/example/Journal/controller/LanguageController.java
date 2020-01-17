@@ -3,6 +3,7 @@ package com.example.Journal.controller;
 import com.example.Journal.DAO.LanguageDao;
 import com.example.Journal.DAO.ResourceDao;
 import com.example.Journal.Service.LanguageService;
+import com.example.Journal.errors.MyException;
 import com.example.Journal.models.Language;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,7 +27,7 @@ public class LanguageController {
 
     @CrossOrigin(origins = "*")
     @PostMapping(value = "")
-    public ResponseEntity<LanguageDao> createLanguage(@RequestBody LanguageDao language) {
+    public ResponseEntity<LanguageDao> createLanguage(@RequestBody LanguageDao language) throws MyException {
         languageService.createLanguage(language);
         LanguageDao languageDao = new LanguageDao();
         return new ResponseEntity<>(languageDao, HttpStatus.CREATED);
@@ -46,7 +47,7 @@ public class LanguageController {
 
     @CrossOrigin(origins = "*")
     @PutMapping("/{languageId}")
-    public void updateLanguage(@PathVariable(value="languageId") Integer languageId, @RequestBody LanguageDao language) {
+    public void updateLanguage(@PathVariable(value="languageId") Integer languageId, @RequestBody LanguageDao language) throws MyException {
         languageService.updateLanguage(languageId, language);
     }
 

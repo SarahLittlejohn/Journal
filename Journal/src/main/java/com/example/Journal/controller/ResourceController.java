@@ -1,6 +1,7 @@
 package com.example.Journal.controller;
 import com.example.Journal.DAO.ResourceDao;
 import com.example.Journal.Service.ResourceService;
+import com.example.Journal.errors.MyException;
 import com.example.Journal.models.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,7 +25,7 @@ public class ResourceController {
 
     @CrossOrigin(origins = "*")
     @PostMapping(value = "")
-    public ResponseEntity<ResourceDao> createResource(@RequestBody ResourceDao resource) {
+    public ResponseEntity<ResourceDao> createResource(@RequestBody ResourceDao resource) throws MyException {
         resourceService.createResource(resource);
         ResourceDao resourceDao = new ResourceDao();
         return new ResponseEntity<>(resourceDao, HttpStatus.CREATED);
@@ -43,7 +44,7 @@ public class ResourceController {
 
     @CrossOrigin(origins = "*")
     @PutMapping("/{resourceId}")
-    public void updateResource(@PathVariable(value="resourceId") Integer resourceId, @RequestBody ResourceDao resource) {
+    public void updateResource(@PathVariable(value="resourceId") Integer resourceId, @RequestBody ResourceDao resource) throws MyException {
         resourceService.updateResource(resourceId, resource);
         ResourceDao resourceDao = new ResourceDao();
     }

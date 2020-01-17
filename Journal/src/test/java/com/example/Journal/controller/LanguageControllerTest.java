@@ -115,7 +115,7 @@ public class LanguageControllerTest {
         verifyNoMoreInteractions(languageService);
     }
 
-    @Ignore
+    @Test
     public void PostLanguage_500Response_ShouldReturnError() throws Exception {
         LanguageDao testLanguage = new LanguageDao();
         testLanguage.setName("testLanguage");
@@ -150,8 +150,8 @@ public class LanguageControllerTest {
         verifyNoMoreInteractions(languageService);
     }
 
-    @Ignore
-    public void testPutLanguageReturns404Response() throws Exception {
+    @Test
+    public void PutLanguage_404Response_ShouldReturnError() throws Exception {
         LanguageDao testLanguage = new LanguageDao();
         testLanguage.setName("testLanguage");
         testLanguage.setUrl("http://testLanguage.com");

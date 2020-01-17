@@ -115,7 +115,7 @@ public class FrameworkControllerTest {
         verifyNoMoreInteractions(frameworkService);
     }
 
-    @Ignore
+    @Test
     public void PostFramework_500Response_ShouldReturnError() throws Exception {
         FrameworkDao testFramework = new FrameworkDao();
         testFramework.setName("testFramework");
@@ -149,8 +149,8 @@ public class FrameworkControllerTest {
         verifyNoMoreInteractions(frameworkService);
     }
 
-    @Ignore
-    public void testPutFrameworkReturns404Response() throws Exception {
+    @Test
+    public void PutFramework_200Response_ShouldReturnError() throws Exception {
         FrameworkDao testFramework = new FrameworkDao();
         testFramework.setName("testFramework");
         testFramework.setUrl("http://testFramework.com");
