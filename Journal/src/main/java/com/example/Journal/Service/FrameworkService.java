@@ -45,9 +45,11 @@ public class FrameworkService {
         return frameworkRepository.findById(frameworkId);
     }
 
-    public FrameworkDao updateFramework(Integer frameworkId, FrameworkDao frameworkDao) {
+    public FrameworkDao updateFramework(Integer frameworkId, FrameworkDao frameworkDao) throws MyException {
         Optional<Framework> framework = frameworkRepository.findById(frameworkId);
-        if (framework.isPresent()) {
+        if (!framework.isPresent()) {
+            throw new MyException(HttpStatus.NOT_FOUND, "resource " + Integer.toString(frameworkId) + " not found");
+        } else {
             framework.get().setName(frameworkDao.getName());
             framework.get().setUrl(frameworkDao.getUrl());
             framework.get().setDescription(frameworkDao.getDescription());

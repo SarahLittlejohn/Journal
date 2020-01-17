@@ -44,7 +44,7 @@ public class ResourceController {
 
     @CrossOrigin(origins = "*")
     @PutMapping("/{resourceId}")
-    public void updateResource(@PathVariable(value="resourceId") Integer resourceId, @RequestBody ResourceDao resource) {
+    public void updateResource(@PathVariable(value="resourceId") Integer resourceId, @RequestBody ResourceDao resource) throws MyException {
         resourceService.updateResource(resourceId, resource);
         ResourceDao resourceDao = new ResourceDao();
     }

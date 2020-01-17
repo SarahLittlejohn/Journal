@@ -45,9 +45,11 @@ public class LanguageService {
         return languageRepository.findById(languageId);
     }
 
-    public LanguageDao updateLanguage(Integer languageId, LanguageDao languageDao) {
+    public LanguageDao updateLanguage(Integer languageId, LanguageDao languageDao) throws MyException {
         Optional<Language> language = languageRepository.findById(languageId);
-        if (language.isPresent()) {
+        if (!language.isPresent()) {
+            throw new MyException(HttpStatus.NOT_FOUND, "resource " + Integer.toString(languageId) + " not found");
+        } else {
             language.get().setName(languageDao.getName());
             language.get().setUrl(languageDao.getUrl());
             language.get().setDescription(languageDao.getDescription());

@@ -45,9 +45,11 @@ public class ResourceService {
         return resourceRepository.findById(resourceId);
     }
 
-    public ResourceDao updateResource(Integer resourceId, ResourceDao resourceDao) {
+    public ResourceDao updateResource(Integer resourceId, ResourceDao resourceDao) throws MyException {
         Optional<Resource> resource = resourceRepository.findById(resourceId);
-        if (resource.isPresent()) {
+        if (!resource.isPresent()) {
+            throw new MyException(HttpStatus.NOT_FOUND, "resource " + Integer.toString(resourceId) + " not found");
+        } else {
             resource.get().setName(resourceDao.getName());
             resource.get().setUrl(resourceDao.getUrl());
             resource.get().setDescription(resourceDao.getDescription());

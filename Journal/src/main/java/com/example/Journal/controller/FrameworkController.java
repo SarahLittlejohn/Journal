@@ -46,7 +46,7 @@ public class FrameworkController {
 
     @CrossOrigin(origins = "*")
     @PutMapping("/{frameworkId}")
-    public void updateFramework(@PathVariable(value="frameworkId") Integer frameworkId, @RequestBody FrameworkDao framework) {
+    public void updateFramework(@PathVariable(value="frameworkId") Integer frameworkId, @RequestBody FrameworkDao framework) throws MyException {
         frameworkService.updateFramework(frameworkId, framework);
     }
 

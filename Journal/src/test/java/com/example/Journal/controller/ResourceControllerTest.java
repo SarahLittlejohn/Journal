@@ -110,7 +110,7 @@ public class ResourceControllerTest {
 
     //=========================================== Test to Post resource ====================================================
     @Test
-    public void PostResource_201Response_ShouldReturnResource() throws Exception {
+    public void PostResource_201Response_ShouldReturnResource() throws MyException {
         ResourceDao testResource = new ResourceDao();
         testResource.setName("testResource");
         testResource.setUrl("http://testResource.com");
@@ -168,8 +168,8 @@ public class ResourceControllerTest {
         verifyNoMoreInteractions(resourceService);
     }
 
-    @Ignore
-    public void testPutResourceReturns404Response() throws Exception {
+    @Test
+    public void PutResource_404Response_ShouldReturnError() throws Exception {
         ResourceDao testResource = new ResourceDao();
         testResource.setName("testResource");
         testResource.setUrl("http://testResource.com");

@@ -47,7 +47,7 @@ public class LanguageController {
 
     @CrossOrigin(origins = "*")
     @PutMapping("/{languageId}")
-    public void updateLanguage(@PathVariable(value="languageId") Integer languageId, @RequestBody LanguageDao language) {
+    public void updateLanguage(@PathVariable(value="languageId") Integer languageId, @RequestBody LanguageDao language) throws MyException {
         languageService.updateLanguage(languageId, language);
     }
 
