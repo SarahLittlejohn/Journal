@@ -20,12 +20,12 @@ public class ProjectDao {
         this.description = description;
     }
 
-    public String getStack() { return stack; }
-
-    public void setStack(String stack) { this.stack = stack; }
-
     public String getStart_date() { return start_date; }
 
     public void setStart_date(String start_date) { this.start_date = start_date; }
+
+    public String getStack() { return stack; }
+
+    public void setStack(String stack) { this.stack = stack; }
 
 }

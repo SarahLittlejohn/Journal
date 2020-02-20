@@ -1,0 +1,32 @@
+databaseChangeLog:
+- changeSet:
+    id: 1579253049065-1
+    author: sol-020 (generated)
+    changes:
+    - dropTable:
+        tableName: dictionary
+- changeSet:
+    id: 1579253049065-2
+    author: sol-020 (generated)
+    changes:
+    - dropTable:
+        tableName: framework
+- changeSet:
+    id: 1579253049065-3
+    author: sol-020 (generated)
+    changes:
+    - dropTable:
+        tableName: language
+- changeSet:
+    id: 1579253049065-4
+    author: sol-020 (generated)
+    changes:
+    - dropTable:
+        tableName: resource
+- changeSet:
+    id: 1579253049065-5
+    author: sol-020 (generated)
+    changes:
+    - dropSequence:
+        sequenceName: hibernate_sequence
+

@@ -14,11 +14,11 @@ public class Project {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "start_date")
-    private String start_date;
-
     @Column(name = "description")
     private String description;
+
+    @Column(name = "start_date")
+    private String start_date;
 
     @Column(name = "stack")
     private String stack;
@@ -47,13 +47,9 @@ public class Project {
         this.start_date = start_date;
     }
 
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription() { return description; }
 
-    public void setDescription(String description) {
-        this.stack = description;
-    }
+    public void setDescription(String description) { this.description = description; }
 
     public String getStack() {
         return stack;

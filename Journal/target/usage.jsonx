@@ -1,0 +1,38 @@
+[
+  {
+    "source": "^a response code of (\\d+)$",
+    "steps": [
+      {
+        "name": "a response code of 200",
+        "aggregatedDurations": {
+          "average": 0.002616697,
+          "median": 0.002616697
+        },
+        "durations": [
+          {
+            "duration": 0.002616697,
+            "location": "resources.feature:4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^a get request is made to \u0027 \"([^\"]*)\" \u0027$",
+    "steps": [
+      {
+        "name": "a get request is made to \u0027 \"/resources\" \u0027",
+        "aggregatedDurations": {
+          "average": 0.107437555,
+          "median": 0.107437555
+        },
+        "durations": [
+          {
+            "duration": 0.107437555,
+            "location": "resources.feature:3"
+          }
+        ]
+      }
+    ]
+  }
+]

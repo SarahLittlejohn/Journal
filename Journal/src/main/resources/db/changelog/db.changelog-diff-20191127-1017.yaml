@@ -1,0 +1,14 @@
+databaseChangeLog:
+- changeSet:
+    id: 1574849871217-1
+    author: sol-020 (generated)
+    changes:
+    - dropTable:
+        tableName: resource
+- changeSet:
+    id: 1574849871217-2
+    author: sol-020 (generated)
+    changes:
+    - dropSequence:
+        sequenceName: hibernate_sequence
+

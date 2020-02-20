@@ -27,8 +27,8 @@ public class ProjectService {
     public ProjectDao createProject(ProjectDao projectDao) throws MyException {
         Project project = new Project();
         project.setName(projectDao.getName());
-        project.setStart_date(projectDao.getStart_date());
         project.setDescription(projectDao.getDescription());
+        project.setStart_date(projectDao.getStart_date());
         project.setStack(projectDao.getStack());
         projectRepository.save(project);
         if(project != null){
@@ -52,9 +52,9 @@ public class ProjectService {
             throw new MyException(HttpStatus.NOT_FOUND, "project " + Integer.toString(projectId) + " not found");
         } else {
             project.get().setName(projectDao.getName());
-            project.get().setStack(projectDao.getStack());
-            project.get().setStart_date(projectDao.getStart_date());
             project.get().setDescription(projectDao.getDescription());
+            project.get().setStart_date(projectDao.getStart_date());
+            project.get().setStack(projectDao.getStack());
             projectRepository.save(project.get());
         }
         return projectDao;

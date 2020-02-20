@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.example.Journal.controller.LanguageControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.example.Journal.controller.LanguageControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.example.Journal.controller.html">com.example.Journal.controller</a> &gt; LanguageControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">5</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.105s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">GetLanguages_200Response_ShouldReturnAllLanguages</td>
+<td class="success">0.017s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">PostLanguage_201Response_ShouldReturnLanguage</td>
+<td class="success">0.021s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">PostLanguage_500Response_ShouldReturnError</td>
+<td class="success">0.017s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">PutLanguage_200Response_ShouldReturnLanguage</td>
+<td class="success">0.022s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">PutLanguage_404Response_ShouldReturnError</td>
+<td class="success">0.028s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2020-01-14 11:12:01.222  INFO 6163 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.Journal.controller.LanguageControllerTest], using SpringBootContextLoader
+2020-01-14 11:12:01.223  INFO 6163 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.example.Journal.controller.LanguageControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-01-14 11:12:01.223  INFO 6163 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.Journal.controller.LanguageControllerTest]: LanguageControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-01-14 11:12:01.226  INFO 6163 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.Journal.JournalApplication for test class com.example.Journal.controller.LanguageControllerTest
+2020-01-14 11:12:01.229  INFO 6163 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2020-01-14 11:12:01.230  INFO 6163 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3d27ae81, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1735551, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3652ed9e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7848600e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@789b8a20, org.springframework.test.context.transaction.TransactionalTestExecutionListener@63d981bf, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@42c6be47, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@7935fe01, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@5d5bb18d, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@72a007e0, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@563ab75, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5370982e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@53a78c14, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@21ca0e87]
+2020-01-14 11:12:01.273  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;com.example.Journal.DAO.LanguageDao&gt; com.example.Journal.controller.LanguageController.createLanguage(com.example.Journal.DAO.LanguageDao) throws com.example.Journal.errors.MyException
+2020-01-14 11:12:01.274  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[DELETE]}&quot; onto public void com.example.Journal.controller.LanguageController.deleteLanguage(java.lang.Integer)
+2020-01-14 11:12:01.274  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[GET]}&quot; onto public java.util.Optional&lt;com.example.Journal.models.Language&gt; com.example.Journal.controller.LanguageController.getLanguageById(java.lang.Integer)
+2020-01-14 11:12:01.275  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[PUT]}&quot; onto public void com.example.Journal.controller.LanguageController.updateLanguage(java.lang.Integer,com.example.Journal.DAO.LanguageDao) throws com.example.Journal.errors.MyException
+2020-01-14 11:12:01.275  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages],methods=[GET]}&quot; onto public java.util.List&lt;com.example.Journal.models.Language&gt; com.example.Journal.controller.LanguageController.getLanguages()
+2020-01-14 11:12:01.286  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@622ffa75
+2020-01-14 11:12:01.288  INFO 6163 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in com.example.Journal.errors.ExceptionHandlingController#75487585
+2020-01-14 11:12:01.289  INFO 6163 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2020-01-14 11:12:01.289  INFO 6163 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-01-14 11:12:01.289  INFO 6163 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2020-01-14 11:12:01.302  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;com.example.Journal.DAO.LanguageDao&gt; com.example.Journal.controller.LanguageController.createLanguage(com.example.Journal.DAO.LanguageDao) throws com.example.Journal.errors.MyException
+2020-01-14 11:12:01.302  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[DELETE]}&quot; onto public void com.example.Journal.controller.LanguageController.deleteLanguage(java.lang.Integer)
+2020-01-14 11:12:01.303  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[GET]}&quot; onto public java.util.Optional&lt;com.example.Journal.models.Language&gt; com.example.Journal.controller.LanguageController.getLanguageById(java.lang.Integer)
+2020-01-14 11:12:01.303  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[PUT]}&quot; onto public void com.example.Journal.controller.LanguageController.updateLanguage(java.lang.Integer,com.example.Journal.DAO.LanguageDao) throws com.example.Journal.errors.MyException
+2020-01-14 11:12:01.303  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages],methods=[GET]}&quot; onto public java.util.List&lt;com.example.Journal.models.Language&gt; com.example.Journal.controller.LanguageController.getLanguages()
+2020-01-14 11:12:01.313  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@43692848
+2020-01-14 11:12:01.315  INFO 6163 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in com.example.Journal.errors.ExceptionHandlingController#33589c71
+2020-01-14 11:12:01.315  INFO 6163 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2020-01-14 11:12:01.315  INFO 6163 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-01-14 11:12:01.316  INFO 6163 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2020-01-14 11:12:01.330  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;com.example.Journal.DAO.LanguageDao&gt; com.example.Journal.controller.LanguageController.createLanguage(com.example.Journal.DAO.LanguageDao) throws com.example.Journal.errors.MyException
+2020-01-14 11:12:01.331  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[DELETE]}&quot; onto public void com.example.Journal.controller.LanguageController.deleteLanguage(java.lang.Integer)
+2020-01-14 11:12:01.331  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[GET]}&quot; onto public java.util.Optional&lt;com.example.Journal.models.Language&gt; com.example.Journal.controller.LanguageController.getLanguageById(java.lang.Integer)
+2020-01-14 11:12:01.331  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[PUT]}&quot; onto public void com.example.Journal.controller.LanguageController.updateLanguage(java.lang.Integer,com.example.Journal.DAO.LanguageDao) throws com.example.Journal.errors.MyException
+2020-01-14 11:12:01.331  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages],methods=[GET]}&quot; onto public java.util.List&lt;com.example.Journal.models.Language&gt; com.example.Journal.controller.LanguageController.getLanguages()
+2020-01-14 11:12:01.337  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@6d629963
+2020-01-14 11:12:01.339  INFO 6163 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in com.example.Journal.errors.ExceptionHandlingController#6008ac2c
+2020-01-14 11:12:01.339  INFO 6163 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2020-01-14 11:12:01.339  INFO 6163 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-01-14 11:12:01.339  INFO 6163 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2020-01-14 11:12:01.348  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;com.example.Journal.DAO.LanguageDao&gt; com.example.Journal.controller.LanguageController.createLanguage(com.example.Journal.DAO.LanguageDao) throws com.example.Journal.errors.MyException
+2020-01-14 11:12:01.349  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[DELETE]}&quot; onto public void com.example.Journal.controller.LanguageController.deleteLanguage(java.lang.Integer)
+2020-01-14 11:12:01.349  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[GET]}&quot; onto public java.util.Optional&lt;com.example.Journal.models.Language&gt; com.example.Journal.controller.LanguageController.getLanguageById(java.lang.Integer)
+2020-01-14 11:12:01.349  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[PUT]}&quot; onto public void com.example.Journal.controller.LanguageController.updateLanguage(java.lang.Integer,com.example.Journal.DAO.LanguageDao) throws com.example.Journal.errors.MyException
+2020-01-14 11:12:01.349  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages],methods=[GET]}&quot; onto public java.util.List&lt;com.example.Journal.models.Language&gt; com.example.Journal.controller.LanguageController.getLanguages()
+2020-01-14 11:12:01.356  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@62337ca6
+2020-01-14 11:12:01.358  INFO 6163 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in com.example.Journal.errors.ExceptionHandlingController#61124064
+2020-01-14 11:12:01.358  INFO 6163 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2020-01-14 11:12:01.358  INFO 6163 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-01-14 11:12:01.358  INFO 6163 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2020-01-14 11:12:01.365  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;com.example.Journal.DAO.LanguageDao&gt; com.example.Journal.controller.LanguageController.createLanguage(com.example.Journal.DAO.LanguageDao) throws com.example.Journal.errors.MyException
+2020-01-14 11:12:01.365  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[DELETE]}&quot; onto public void com.example.Journal.controller.LanguageController.deleteLanguage(java.lang.Integer)
+2020-01-14 11:12:01.366  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[GET]}&quot; onto public java.util.Optional&lt;com.example.Journal.models.Language&gt; com.example.Journal.controller.LanguageController.getLanguageById(java.lang.Integer)
+2020-01-14 11:12:01.366  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages/{languageId}],methods=[PUT]}&quot; onto public void com.example.Journal.controller.LanguageController.updateLanguage(java.lang.Integer,com.example.Journal.DAO.LanguageDao) throws com.example.Journal.errors.MyException
+2020-01-14 11:12:01.366  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/languages],methods=[GET]}&quot; onto public java.util.List&lt;com.example.Journal.models.Language&gt; com.example.Journal.controller.LanguageController.getLanguages()
+2020-01-14 11:12:01.373  INFO 6163 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@6f69aaa0
+2020-01-14 11:12:01.375  INFO 6163 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in com.example.Journal.errors.ExceptionHandlingController#75f81e50
+2020-01-14 11:12:01.375  INFO 6163 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring FrameworkServlet ''
+2020-01-14 11:12:01.375  INFO 6163 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-01-14 11:12:01.375  INFO 6163 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 5.6.4</a> at 14-Jan-2020 11:12:01</p>
+</div>
+</div>
+</body>
+</html>

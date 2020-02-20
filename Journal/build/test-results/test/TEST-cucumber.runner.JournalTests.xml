@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cucumber.runner.JournalTests" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="sol020-Inspiron-5570" time="0.0">
+  <properties/>
+  <system-out><![CDATA[Feature: View & create resources
+
+  Scenario: Get the list of resources              ?[90m# resources.feature:2?[0m
+    ?[32mWhen ?[0m?[32ma get request is made to ' "?[0m?[32m?[1m/resources?[0m?[32m" '?[0m ?[90m# ResourceSteps.aGetRequestIsMadeToEndpoint(String)?[0m
+    ?[32mThen ?[0m?[32ma response code of ?[0m?[32m?[1m200?[0m                    ?[90m# ResourceSteps.aResponseCodeOf(int)?[0m
+
+1 Scenarios (?[32m1 passed?[0m)
+2 Steps (?[32m2 passed?[0m)
+0m0.110s
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -34,7 +34,7 @@ formatter.match({
   "location": "ResourceSteps.aGetRequestIsMadeToEndpoint(String)"
 });
 formatter.result({
-  "duration": 97607102,
+  "duration": 107437555,
   "status": "passed"
 });
 formatter.match({
@@ -47,7 +47,7 @@ formatter.match({
   "location": "ResourceSteps.aResponseCodeOf(int)"
 });
 formatter.result({
-  "duration": 2961479,
+  "duration": 2616697,
   "status": "passed"
 });
 });

@@ -27,8 +27,7 @@ public class ProjectController {
     @PostMapping(value = "")
     public ResponseEntity<ProjectDao> createProject(@RequestBody ProjectDao project) throws MyException {
         projectService.createProject(project);
-        ProjectDao projectDao = new ProjectDao();
-        return new ResponseEntity<>(projectDao, HttpStatus.CREATED);
+        return new ResponseEntity<>(project, HttpStatus.CREATED);
     }
 
     @CrossOrigin(origins = "*")
